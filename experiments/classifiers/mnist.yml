@@ -1,0 +1,25 @@
+num_epochs: 10
+
+classifier:
+  name: mnist_classifier
+  path: runs/classifiers/mnist
+  imported: False
+
+optimizer:
+  type: adam
+  args:
+    lr: 0.001
+    betas: [0.9, 0.999]
+
+scheduler:
+  type: none
+
+dataset:
+  name: mnist
+  num_classes: 10
+  train:
+    path: data/mnist
+    batch_size: 128
+  test:
+    path: data/mnist
+    batch_size: 128

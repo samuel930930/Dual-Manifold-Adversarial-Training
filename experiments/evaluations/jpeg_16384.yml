@@ -1,0 +1,10 @@
+output_path: eval_jpeg_1024
+attack:
+  module: attacks.jpeg_attack
+  name: JPEGAttack
+  args:
+    nb_iters: 200
+    eps_max: 1024
+    step_size: 72.40773439350247
+    opt: 'l1'
+    resolution: 256

@@ -1,0 +1,25 @@
+num_epochs: 40
+
+classifier:
+  name: imagenet_classifier
+  path: runs/classifiers/mixed10_adam
+
+optimizer:
+  module: torch.optim
+  name: Adam
+  args:
+    lr: 0.001
+
+scheduler:
+  type: null
+  args:
+
+dataset:
+  name: mixed10
+  num_classes: 10
+  train:
+    path: /vulcan/scratch/andylin/invGAN/stylegan/dataset
+    batch_size: 64
+  test:
+    path: /vulcan/scratch/andylin/invGAN/stylegan/dataset
+    batch_size: 64

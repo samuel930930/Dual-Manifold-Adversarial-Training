@@ -1,0 +1,9 @@
+output_path: eval_elastic_05
+attack:
+  module: attacks.elastic_attack
+  name: ElasticAttack
+  args:
+    nb_iters: 200
+    eps_max: 0.5
+    step_size: 0.035355339059327376
+    resolution: 256

@@ -1,0 +1,8 @@
+output_path: eval_fw
+attack:
+  module: attacks.fw_attack
+  name: FWAttack
+  args:
+    nb_iters: 200
+    eps_max: 0.508211
+    resolution: 256

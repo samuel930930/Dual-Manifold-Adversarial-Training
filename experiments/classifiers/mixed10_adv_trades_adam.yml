@@ -1,0 +1,33 @@
+num_epochs: 20
+
+classifier:
+  name: imagenet_classifier
+  path: runs/classifiers/mixed10_trades_sgd
+
+optimizer:
+  module: torch.optim
+  name: Adam
+  args:
+    lr: 0.001
+
+scheduler:
+  type: null
+  args:
+
+
+attack:
+  args:
+    eps: 0.03137255 # 8/255 in [-1, 1]
+    eps_iter: 0.00784314 # 2/255 in [-1, 1]
+    nb_iter: 10
+    beta: 1.0
+
+dataset:
+  name: mixed10
+  num_classes: 10
+  train:
+    path: /vulcan/scratch/andylin/invGAN/stylegan/dataset
+    batch_size: 64
+  test:
+    path: /vulcan/scratch/andylin/invGAN/stylegan/dataset
+    batch_size: 64

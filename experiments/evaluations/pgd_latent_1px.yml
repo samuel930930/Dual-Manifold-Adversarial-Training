@@ -1,0 +1,10 @@
+output_path: eval_pgd_latent_1px
+attack:
+  module: advertorch.attacks
+  name: PGDAttack
+  args:
+    eps: 0.01
+    eps_iter: 0.005
+    nb_iter: 50
+    clip_min: null
+    clip_max: null

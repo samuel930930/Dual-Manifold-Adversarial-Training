@@ -1,0 +1,8 @@
+output_path: eval_perc_100
+attack:
+  module: attacks.perc
+  name: PerC
+  args:
+    max_iterations: 100
+    confidence: 40
+    alpha_c_init: 0.5

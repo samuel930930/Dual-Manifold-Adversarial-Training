@@ -1,0 +1,9 @@
+output_path: eval_fog_128
+attack:
+  module: attacks.fog_attack
+  name: FogAttack
+  args:
+    nb_iters: 200
+    eps_max: 128
+    step_size: 0.002236
+    resolution: 256

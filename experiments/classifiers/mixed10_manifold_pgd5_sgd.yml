@@ -1,0 +1,41 @@
+num_epochs: 30
+
+classifier:
+  name: imagenet_classifier
+  path: runs/classifiers/mixed10_manifold_pgd5_sgd
+
+optimizer:
+  module: torch.optim
+  name: SGD
+  args:
+    lr: 0.1
+    momentum: 0.9
+    weight_decay: 0.0001
+
+scheduler:
+  type: cyclic
+  args:
+    lr_epochs: !!python/tuple [0,1,6,12,15,20]
+    lr_values: !!python/tuple [0,0.4,0.04,0.004,0.0004,0.0001]
+
+
+attack:
+  module: advertorch.attacks
+  name: PGDAttack
+  args:
+    eps: 0.02
+    eps_iter: 0.005
+    nb_iter: 5
+    clip_min: null
+    clip_max: null
+
+
+dataset:
+  name: mixed10
+  num_classes: 10
+  train:
+    path: /vulcan/scratch/andylin/invGAN/stylegan/dataset
+    batch_size: 64
+  test:
+    path: /vulcan/scratch/andylin/invGAN/stylegan/dataset
+    batch_size: 64

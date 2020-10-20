@@ -1,0 +1,11 @@
+output_path: eval_pgd_image_l1_153000
+attack:
+  module: advertorch.attacks
+  name: PGDAttack
+  args:
+    eps: 600.0 # 153000/255 in [-1, 1]
+    eps_iter: 100.0 # 25500/255 in [-1, 1]
+    ord: 1
+    nb_iter: 50
+    clip_min: -1.0
+    clip_max: 1.0

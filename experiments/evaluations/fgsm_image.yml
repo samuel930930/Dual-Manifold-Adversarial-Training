@@ -1,0 +1,10 @@
+output_path: eval_fgsm_image
+attack:
+  module: advertorch.attacks
+  name: PGDAttack
+  args:
+    eps: 0.03137255 # 8/255 in [-1, 1]
+    eps_iter: 0.03921569 # [10/255]
+    nb_iter: 1
+    clip_min: -1.0
+    clip_max: 1.0

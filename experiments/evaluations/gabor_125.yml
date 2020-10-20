@@ -1,0 +1,9 @@
+output_path: eval_gabor_125
+attack:
+  module: attacks.gabor_attack
+  name: GaborAttack
+  args:
+    nb_iters: 200
+    eps_max: 12.5
+    step_size: 0.002236
+    resolution: 256

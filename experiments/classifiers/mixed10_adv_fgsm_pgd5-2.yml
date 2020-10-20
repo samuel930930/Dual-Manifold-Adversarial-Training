@@ -1,0 +1,45 @@
+num_epochs: 30
+
+classifier:
+  name: imagenet_classifier
+  path: runs/classifiers/mixed10_fgsm_pgd5-2
+
+optimizer:
+  type: adam
+  args:
+    lr: 0.0001
+
+scheduler:
+  type: step
+  args:
+    step_size: 150
+
+image_attack:
+  module: advertorch.attacks
+  name: PGDAttack
+  args:
+    eps: 0.03137255 # [8/255]
+    eps_iter: 0.03921569 # [10/255]
+    nb_iter: 1
+    clip_min: -1.0
+    clip_max: 1.0
+
+latent_attack:
+  module: advertorch.attacks
+  name: PGDAttack
+  args:
+    eps: 0.01
+    eps_iter: 0.05
+    nb_iter: 5
+    clip_min: null
+    clip_max: null
+
+dataset:
+  name: mixed10
+  num_classes: 10
+  train:
+    path: /vulcan/scratch/andylin/invGAN/stylegan/dataset
+    batch_size: 64
+  test:
+    path: /vulcan/scratch/andylin/invGAN/stylegan/dataset
+    batch_size: 64

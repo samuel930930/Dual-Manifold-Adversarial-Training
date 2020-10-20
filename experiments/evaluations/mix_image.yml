@@ -1,0 +1,29 @@
+output_path: eval_mix_image
+attack_list:
+  attack_1:
+    module: advertorch.attacks
+    name: PGDAttack
+    args:
+      eps: 0.03137255 # 8/255 in [-1, 1]
+      eps_iter: 0.03921569 # [10/255]
+      nb_iter: 1
+      clip_min: -1.0
+      clip_max: 1.0
+  attack_2:
+    module: advertorch.attacks
+    name: PGDAttack
+    args:
+      eps: 0.03137255 # 8/255 in [-1, 1]
+      eps_iter: 0.00784314 # 2/255 in [-1, 1]
+      nb_iter: 50
+      clip_min: -1.0
+      clip_max: 1.0
+  attack_3:
+    module: advertorch.attacks
+    name: MomentumIterativeAttack
+    args:
+      eps: 0.03137255 # 8/255 in [-1, 1]
+      eps_iter: 0.00784314 # 2/255 in [-1, 1]
+      nb_iter: 50
+      clip_min: -1.0
+      clip_max: 1.0
