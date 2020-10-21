@@ -7,6 +7,9 @@
 - tqdm
 - advertorch (`pip install advertorch`)
 
+## Dataset and trained StyleGAN
+You can download the dataset and trained StyleGAN by the [link](https://drive.google.com/drive/folders/1DRsiquKEClTaje2nXXGugOiqfGICkv0-?usp=sharing).
+
 ## Structure of the configs
 Since we need to handle GAN, classifier training, and adversarial attack in the same place, it's important to have a structured configuration. Take classifier training as an example, in `experiments/encoders/mnist.yml`:
 ```
