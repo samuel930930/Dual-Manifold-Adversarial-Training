@@ -1,4 +1,4 @@
-# PyTorch Implementation of DMAT
+# PyTorch Implementation of Dual Manifold Adversarial Training (DMAT)
 
 ## Requirements
 - CUDA 10.0.130 or newer, cudnn v7.6.5 or newer.
